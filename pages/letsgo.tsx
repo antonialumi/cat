@@ -20,14 +20,16 @@ export default function Letsgo(){
     }
         
 
-    return (<>
-        <div className="font-sans" >AAAAAAAA letsgo</div> <br/>
+    return (
+    <div className="font-mono, text-center">
+    <p>AAAAAAAA letsgo</p> <br/>
         <button onClick={ e => pressWordButton()}>
             Word
         </button> <br/>
         {selectedPhrase}
         <br />
         <a href="/">Home</a>
-    </>)
+    </div>
+    )
 
 }
