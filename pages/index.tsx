@@ -1,9 +1,11 @@
 
 export default function Home() {
   return (
-    <div className="font-mono, text-center">
-      <h1>Hello</h1>
-      <a href="\letsgo">Lets go</a>
+    <div className="fondo" style={{ minHeight: '100vh' }}>
+      <div className="grid-container">
+      <h1 className="grid-item fondo">Hello</h1>
+      <a className="grid-item"href="\letsgo">Lets go</a>
+    </div>
     </div>
   )
 }

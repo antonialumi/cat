@@ -2,5 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+.fondo{
+    background-color: rgb(246, 231, 194);
+}
+html, body {
+    height:  100%;
+}
 
-
+.grid-item {
+    border: 2px solid #000;
+    padding: 20px; /* space within grid items */
+    
+  }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* number of columns */
+    gap: 0.4px; /* gap between grid items */
+  }

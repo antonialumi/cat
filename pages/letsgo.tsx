@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Home from ".";
+
 
 
 const randomWords = ["potato","spaghetti","cat","clock"];
@@ -21,15 +21,19 @@ export default function Letsgo(){
         
 
     return (
-    <div className="font-mono, text-center">
-    <p>AAAAAAAA letsgo</p> <br/>
-        <button onClick={ e => pressWordButton()}>
-            Word
-        </button> <br/>
-        {selectedPhrase}
-        <br />
-        <a href="/">Home</a>
-    </div>
+        <div className="fondo" style={{ minHeight: '100vh' }}>
+            <div className="grid-container">
+                <p className="grid-item">AAAAAAAA letsgo</p> 
+                <div className="grid-container">
+                    <button className="grid-item" onClick={ e => pressWordButton()}>
+                    Word
+                    </button>
+                    <div className="grid-item">{selectedPhrase}</div>
+                </div>
+                <br/>
+                <a className="grid-item"href="/">Home</a></div>
+        </div>
+    
     )
 
 }
