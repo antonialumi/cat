@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -21,18 +22,18 @@ export default function Letsgo(){
         
 
     return (
-        <div className="fondo" style={{ minHeight: '100vh' }}>
+        <><div className="fondo" style={{ minHeight: '100vh' }}>
             <div className="grid-container">
-                <p className="grid-item">AAAAAAAA letsgo</p> 
+                <p className="grid-item">AAAAAAAA letsgo</p>
                 <div className="grid-container">
-                    <button className="grid-item" onClick={ e => pressWordButton()}>
-                    Word
+                    <button className="grid-item" onClick={e => pressWordButton()}>
+                        Word
                     </button>
                     <div className="grid-item">{selectedPhrase}</div>
                 </div>
-                <br/>
-                <a className="grid-item"href="/">Home</a></div>
-        </div>
+                <br />
+                </div>
+        </div></>
     
     )
 
