@@ -23,9 +23,9 @@ export default function Letsgo(){
 
     return (
         <><div className="fondo" style={{ minHeight: '100vh' }}>
-            <div className="grid-container">
-                <p className="grid-item">AAAAAAAA letsgo</p>
-                <div className="grid-container">
+            <div className="container">
+                <p className="box">AAAAAAAA letsgo</p>
+                <div className="box">
                     <button className="grid-item" onClick={e => pressWordButton()}>
                         Word
                     </button>
