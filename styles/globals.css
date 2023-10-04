@@ -29,24 +29,25 @@ html, body {
     font-size: 20px;
     margin: 0;
     padding-bottom: 0;
-
   }
 
 .frameIt {
   padding: 10px;
 }
-  .motherbox {
+
+.motherbox {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     text-align: center;
     padding-top: 0px;
     width: 100%;
-     }
+}
 
-  a:hover,button:hover{
+a:hover,button:hover{
     color: blue;
-  }
+}
+
   @media (max-width: 768px){
     .container {
       flex-direction: column;
