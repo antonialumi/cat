@@ -1,63 +1,49 @@
-/* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
-import Link from "next/link";
+import React, { useState, useEffect } from 'react';
+
+export default function Letsgo() {
+  const [fact, setFact] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
 
-const randomWords = ["potato","spaghetti","cat","clock"];
+  const fetchRandomFact = async () => {
+    setIsLoading(true);
 
+    try {
+      const response = await fetch('https://catfact.ninja/fact?max_length=140');
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
 
-
-export default function Letsgo(){
-    const [selectedPhrase,setSelectedPhrase] = useState(' ')
-    const [showImage, setShowImage] = useState(false);
-
-    const wordImageMapping: Record<string, string> = {
-        potato: 'potato.jpg',
-        spaghetti: 'spaghetti.jpg',
-        cat: '/media/cat.png',
-        clock: 'clock.jpg',
-      };
-
-    function giveMeAWord(){
-        const randomNumber = Math.floor(Math.random() * randomWords.length)
-        return randomWords[randomNumber]
+      const data = await response.json();
+      setFact(data.fact);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setIsLoading(false);
     }
+  };
 
-    const pressWordButton = () => {
-        console.log('button was pressed');
-        const word = giveMeAWord();
-        setSelectedPhrase(word);
-
-        if(word in wordImageMapping){
-            setShowImage(true);
-        }
-        setShowImage(false)
-        }
-
-    return (
-        <><div className="fondo" style={{ minHeight: '100vh' }}>
-            <div className="motherbox">
-            <div className="box">
-                    {selectedPhrase}
-                    <br />
-                    <button onClick={e => pressWordButton()}>
-                    Press to get a fact
-                    </button> 
-                    <br />
-                    <div> 
-            </div>
-                </div>
-                <div className="box"style={{ display: 'flex',justifyContent: 'center', alignItems: 'center' }}>
-                    <img
-                    src={wordImageMapping[selectedPhrase]}
-                    alt={selectedPhrase}
-                    style={{ width: '360px', height: 'auto', alignContent: 'center', padding: '0px', margin:'0px' }} 
-                  />
-                </div>
-                <br />
-                </div>
-        </div></>
+  useEffect(() => {
     
-    )
+    fetchRandomFact();
+  }, []); 
 
+  return (
+    <>
+      <div className="fondo" style={{ minHeight: '100vh' }}>
+        <div className="motherbox">
+          <div className="box">
+            <button onClick={fetchRandomFact} disabled={isLoading}>
+              {isLoading ? 'Loading...' : 'Get Random Fact'}
+            </button>
+            <div>
+              {fact && (
+                <p className="box">{fact}</p>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
