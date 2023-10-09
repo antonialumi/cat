@@ -4,7 +4,9 @@
 
 .fondo{
     background-color: rgb(246, 231, 194);
+    background-image: url(/media/papertex.png);
 }
+
 html, body {
     height:  100%;
     margin: 0;

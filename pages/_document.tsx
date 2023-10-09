@@ -6,6 +6,8 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" />
+        <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet"/>
+
       </Head>
       <body className='fondo'>
         <NavigationBar></NavigationBar>

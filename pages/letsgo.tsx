@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react';
 
 export default function Letsgo() {
   const [fact, setFact] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
 
 
   const fetchRandomFact = async () => {
@@ -28,19 +30,32 @@ export default function Letsgo() {
     fetchRandomFact();
   }, []); 
 
+  const specificWords = ['bean','beans','toe','toes','paw']
+  const hasSpecificWord = specificWords.some((word) => fact.toLowerCase().includes(word));
+
   return (
     <>
       <div className="fondo" style={{ minHeight: '100vh' }}>
         <div className="motherbox">
-          <div className="box">
-            <button onClick={fetchRandomFact} disabled={isLoading}>
-              {isLoading ? 'Loading...' : 'Get Random Fact'}
-            </button>
+          <div className="box"  style={{ display: 'flex', flexDirection: 'column',   justifyContent: 'center', alignItems: 'center' }}>
             <div>
               {fact && (
-                <p className="box">{fact}</p>
+                <p style={{textAlign:'left', fontFamily:'Gravitas One', fontSize: '30px',display: 'flex', flexDirection: 'column',   justifyContent: 'center', alignItems: 'center', padding:'10px'}}>{fact}</p>
               )}
             </div>
+            <br />
+            <button onClick={fetchRandomFact} disabled={isLoading} style={{fontSize:'26px'}}>
+              {isLoading ? 'Loading...' : 'Get Random Fact'}
+            </button>
+          </div>
+          <div className='box' style={{ display: 'flex',justifyContent: 'center', alignItems: 'center' }}>
+          {hasSpecificWord && (
+            <img
+                    src="/media/cat.png"
+                    alt="cat paw"
+                    style={{ width: '360px', height: 'auto', alignContent: 'center', padding: '0px', margin:'0px' }} 
+                  />
+          )}
           </div>
         </div>
       </div>
