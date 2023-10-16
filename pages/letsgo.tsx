@@ -32,7 +32,10 @@ export default function Letsgo() {
 
   const specificWords = ['bean','beans','toe','toes','paw']
   const hasSpecificWord = specificWords.some((word) => fact.toLowerCase().includes(word));
-
+  //condition ? ifTrueExperssion : ifFalseExpression;
+  /*averiguar como pingo hacer para mostrar una segunda img con palabras especificas distintas
+     ej: si hasSpecificWord contiene a entonces muestra a.img, si contiene b muestra b.img , etc  
+  */
   return (
     <>
       <div className="fondo" style={{ minHeight: '100vh' }}>
