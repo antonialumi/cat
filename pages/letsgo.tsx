@@ -98,22 +98,12 @@ export default function Letsgo() {
   }
 
   const wordImageMapping = makeWordImageMapping()
-  /*const wordImageMapping: {[key:string]:string} = {
-    paw: '/media/cat.png', paws: '/media/cat.png', beans: '/media/cat.png',
-    sleep: '/media/babycat.png', naps: '/media/babycat.png', sleeps: '/media/cat.png', rest: '/media/cat.png',
-    sardine: '/media/fish.png', fish: '/media/fish.png',
-    mates: '/media/cats.png', partner: '/media/cats.png', companion: '/media/cats.png', lover: '/media/cats.png',
-  }*/
-
-
+  
  
   const hasSpecificWord = (fact: string) => {
     return Object.keys(wordImageMapping).filter((word) => fact.toLowerCase().includes(word));
   };
-  //condition ? ifTrueExperssion : ifFalseExpression;
-  /*averiguar como pingo hacer para mostrar una segunda img con palabras especificas distintas
-     ej: si hasSpecificWord contiene a entonces muestra a.img, si contiene b muestra b.img , etc  
-  */
+
 
   const ImageForWord = () => {
     const firstAppearingWordKey = Object.keys(wordImageMapping).find(word => fact.toLowerCase().includes(word) )
@@ -130,7 +120,7 @@ export default function Letsgo() {
           <div className="box"  style={{ display: 'flex', flexDirection: 'column',   justifyContent: 'center', alignItems: 'center' }}>
             <div>
               {fact && (
-                <p style={{textAlign:'left', fontFamily:'Bebas Neue', fontSize: '50px',display: 'flex', flexDirection: 'column',   justifyContent: 'center', alignItems: 'center', padding:'10px'}}>{fact}</p>
+                <p style={{textAlign:'left', fontFamily:'Open Sans', fontSize: '25px',display: 'flex', flexDirection: 'column',   justifyContent: 'center', alignItems: 'center', padding:'10px'}}>{fact}</p>
               )}
             </div>
             <br />

@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 .fondo{
-    background-color: rgb(246, 231, 194);
-    background-image: url(/media/papertex.png);
+    background-color: rgb(227, 227, 225);
 }
 
 html, body {
@@ -17,6 +16,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
   margin: 0;
   padding: 10px;
   padding-bottom: 0;
@@ -25,7 +25,7 @@ html, body {
 
 .box{
     flex: 1;
-    border: 2px solid #000;
+    border: 0px solid #00000000;
     padding: 10px; /* space within grid items */
     font-family: 'Bebas Neue', sans-serif;
     font-size: 20px;
